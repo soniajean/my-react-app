@@ -15,8 +15,9 @@ const Shop = () => {
     const db = useDatabase();
     const { data:user } = useUser();
 
-    const web_url = 'https://clutch-flask.onrender.com/api/products';
-    const local_url = 'http://127.0.0.1:5000/api/products';
+
+    const web_url = 'https://flask-app-2gmz.onrender.com/api/product';
+    const local_url = 'http://127.0.0.1:5000/api/product';
     console.log(web_url, local_url);
 
     const getProductData = async () => {

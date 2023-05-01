@@ -5,7 +5,7 @@ import { DataContext } from "../context/DataProvider";
 import CheckoutForm from "../components/CheckoutForm";
 import { useUser } from "reactfire";
 
-const stripePromise = loadStripe("pk_test_51My1ATBmaCyUhyMhlxNbDyiim4xqogMFFAgUWTyyQIl29sQ2VBrgcQIvAlrBYpeKerczkJSHbo7nO2TXXT1sac2v00tpjjlBjy");
+const stripePromise = loadStripe("pk_test_51N1wQUHVXK2z2vrp0KHs9YjWXYo9D04dnMxoF4LJcErcf7P1kK9N7FP6pVEqtuqiK0R8SFmxKSOlCpyw47s75q4g00JM4dpQ72");
 
 
 const Checkout = () => {
@@ -18,14 +18,14 @@ const Checkout = () => {
         // create payment intent as soon as this component FIRST renders 
         // with an API call to flask
         console.log(user);
-        fetch("https://clutch-flask.onrender.com/pay/create-payment-intent", {
+        fetch("https://127.0.0.1:5000/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({'cart':cart, 'user':user}),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
-    }, []);
+    }, [])
 
     const appearance = {
         theme: 'stripe',

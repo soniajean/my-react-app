@@ -65,6 +65,12 @@ const Nav = props => {
                                 </> :
                                 <button className="btn btn-primary w-25" onClick={signin}>Login</button>
                     }
+                    {
+                        props.admin.in ? <Link className="nav-link" to='/adminhome'><i className="fa-solid fa-lock-open"></i></Link>
+                        :
+                        <Link className="nav-link" to='/adminsignin'><i className="fa-solid fa-lock"></i></Link>
+                    }
+                    
                     {cart.size === 0 ?
                         <span id="r-span"><Link className="nav-item nav-link active" to='/shop'><i className="fa-solid fa-cart-shopping"></i></Link></span> :
                         <span id="r-span"><Link className="nav-item nav-link active" to='/cart'>{cart.size} - ${cart.total.toFixed(2)} <i className="fa-solid fa-cart-shopping"></i></Link></span>
