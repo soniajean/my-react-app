@@ -18,7 +18,7 @@ const Checkout = () => {
         // create payment intent as soon as this component FIRST renders 
         // with an API call to flask
         console.log(user);
-        fetch("https://127.0.0.1:5000/create-payment-intent", {
+        fetch("https://ecomproj.onrender.com/pay/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({'cart':cart, 'user':user}),

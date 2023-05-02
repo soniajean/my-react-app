@@ -16,7 +16,7 @@ const Shop = () => {
     const { data:user } = useUser();
 
 
-    const web_url = 'https://flask-app-2gmz.onrender.com/api/product';
+    const web_url = 'https://ecomproj.onrender.com/api/product';
     const local_url = 'http://127.0.0.1:5000/api/product';
     console.log(web_url, local_url);
 
@@ -83,7 +83,7 @@ const Shop = () => {
                             <li className="list-group-item">Price-${product.price}</li>
                         </ul>
                         <div className="card-body">
-                            <button href="#" className="card-link btn btn-success mb-2" onClick={() => addProduct(product)}>Add to cart!</button>
+                            <button href="#" className="card-link b`tn btn-success mb-2" onClick={() => addProduct(product)}>Add to cart!</button>
                             <button href="#" className="card-link btn btn-secondary" disabled>Maybe later?</button>
                         </div>
                     </div>
